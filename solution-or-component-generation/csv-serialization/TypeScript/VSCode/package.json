@@ -1,0 +1,17 @@
+{
+  "name": "csv-service",
+  "version": "1.0.1",
+  "description": "\"Csv Service\"",
+  "main": "csvService.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Vladyslav Kysil",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.3"
+  }
+}

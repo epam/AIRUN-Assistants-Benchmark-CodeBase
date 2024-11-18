@@ -1,0 +1,18 @@
+{
+  "name": "file-lib",
+  "version": "1.0.1",
+  "description": "Core lib to work with files",
+  "main": "src/file-lib.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Vladyslav Kysil",
+  "company": "EPAM Systems Inc.",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.3"
+  }
+}
