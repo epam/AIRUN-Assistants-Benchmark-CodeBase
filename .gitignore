@@ -1,4 +1,8 @@
 .idea
+*.iws
+*.iml
+*.ipr
+**/out/
 
 .classpath
 .project
@@ -10,3 +14,10 @@
 **/bin/
 **/obj/
 **/target/
+
+.gradle
+gradle
+gradlew
+gradlew.bat
+build
+
