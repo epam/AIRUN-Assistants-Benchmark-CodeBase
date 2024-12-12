@@ -22,15 +22,17 @@ public class BackfillService {
             String accountId = transfer.getAccountId();
             Account account = accounts.get(accountId);
             if (account == null) {
-                account = new Account(accountId);
+                account = new Account(accountId, transfer.getAmount(), transfer.getDate());
                 accounts.put(accountId, account);
             }
-            account.setCurrentAmount(account.getCurrentAmount() == null ? transfer.getAmount()
-                    : account.getCurrentAmount().add(transfer.getAmount()));
-            Date updateDate = account.getUpdateDate();
-            Date transferDate = transfer.getDate();
-            if (updateDate == null || updateDate.before(transferDate) ) {
-                account.setUpdateDate(transferDate);
+            else
+            {
+                account.setCurrentAmount(account.getCurrentAmount().add(transfer.getAmount()));
+                Date updateDate = account.getUpdateDate();
+                Date transferDate = transfer.getDate();
+                if (updateDate.before(transferDate)) {
+                    account.setUpdateDate(transferDate);
+                }
             }
         }
 

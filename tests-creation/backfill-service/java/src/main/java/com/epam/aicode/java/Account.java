@@ -14,6 +14,12 @@ public class Account {
         this.accountId = accountId;
     }
 
+    public Account(String accountId, BigDecimal currentAmount, Date updateDate) {
+        this.accountId = accountId;
+        this.currentAmount = currentAmount;
+        this.updateDate = updateDate;
+    }
+
     public BigDecimal getCurrentAmount() {
         return currentAmount;
     }

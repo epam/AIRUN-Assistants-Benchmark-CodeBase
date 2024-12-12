@@ -9,6 +9,9 @@ public class Transfer {
     private final BigDecimal amount;
 
     public Transfer(String accountId, Date date, BigDecimal amount) {
+        if (accountId == null || date == null || amount == null) {
+            throw new IllegalArgumentException("cnanot accept null argument(s)");
+        }
         this.accountId = accountId;
         this.date = date;
         this.amount = amount;

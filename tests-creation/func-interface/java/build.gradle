@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
     id 'eclipse'
     id 'idea'
 }
@@ -27,6 +28,16 @@ test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        csv.required.set(false)
+        html.required.set(true)
+        xml.required.set(true)
     }
 }
 
