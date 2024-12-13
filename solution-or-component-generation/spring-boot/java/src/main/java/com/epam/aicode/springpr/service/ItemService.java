@@ -52,7 +52,7 @@ public class ItemService {
         itemRepository.deleteById(id);
     }
 
-    public List<Item> findExprireByNow() {
+    public List<Item> findExpiredByNow() {
         // TODO: add implementation
         return Collections.emptyList();
     }

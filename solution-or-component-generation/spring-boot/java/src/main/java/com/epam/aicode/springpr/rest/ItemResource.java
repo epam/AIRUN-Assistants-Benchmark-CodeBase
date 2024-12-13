@@ -18,8 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController()
-@RequestMapping(value = "/api/items", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = ItemResource.BASE_URI, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ItemResource {
+    public static final String BASE_URI = "/api/items";
+
     private final ItemService itemService;
     private final ModelMapper modelMapper;
 
@@ -37,7 +39,7 @@ public class ItemResource {
 
     @GetMapping(":expired")
     public ResponseEntity<List<ItemDTO>> getExpiredItems() {
-        List<Item> items = itemService.findExprireByNow();
+        List<Item> items = itemService.findExpiredByNow();
         List<ItemDTO> dtos = items.stream().map(this::convertToDto).collect(Collectors.toList());
         return ResponseEntity.ok(dtos);
     }
