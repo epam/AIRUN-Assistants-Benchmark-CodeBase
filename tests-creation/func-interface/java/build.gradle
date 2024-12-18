@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'eclipse'
+    id 'idea'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:$rev_junit"))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation "org.mockito:mockito-core:$rev_mockito"
+    testImplementation "org.mockito:mockito-junit-jupiter:$rev_mockito"
+
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        csv.required.set(false)
+        html.required.set(true)
+        xml.required.set(true)
+    }
+}
+
+wrapper {
+    gradleVersion = "$rev_gradle"
+}
