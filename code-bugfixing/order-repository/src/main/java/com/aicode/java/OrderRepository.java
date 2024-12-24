@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    @Query("SELECT o FROM Order o " +
+    @Query("SELECT o FROM Orders o " +
         "WHERE (:status IS NULL OR o.status = :status) " +
         "AND (:customerId IS NULL OR o.customerId = :customerId) " +
-        "AND (CAST(:minTotalCost AS double) IS NULL OR o.totalCost >= :minTotalCost) " +
+        "AND (CAST(:minTotalCost AS double) IS NULL OR o.totalCost >= :minTotalCost " +
         "AND (CAST(:maxTotalCost AS double) IS NULL OR o.totalCost <= :maxTotalCost) " +
         "AND (:startDate IS NULL OR o.orderDate >= :startDate) " +
         "AND (:endDate IS NULL OR o.orderDate <= :endDate)")
