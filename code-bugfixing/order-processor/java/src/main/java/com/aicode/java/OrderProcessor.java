@@ -19,19 +19,17 @@ public class OrderProcessor {
     public String calculateMostPopularProduct(List<Order> orders) {
         Date currentDate = new Date();
 
-        // Calculate the date 30 days prior to the current date
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(currentDate);
-        calendar.add(Calendar.DAY_OF_YEAR, -30);
+        calendar.add(Calendar.HOUR, -30);
         Date thirtyDaysAgo = calendar.getTime();
 
-        // Filter and process orders from the last 30 days
         return orders.stream()
-            .filter(order -> !order.getOrderDate().before(thirtyDaysAgo))
+            .filter(order -> order.getOrderDate().before(thirtyDaysAgo))
             .flatMap(order -> order.getProducts().stream())
             .collect(Collectors.groupingBy(Product::getProductName, Collectors.summingInt(Product::getQuantity)))
             .entrySet().stream()
-            .max(Map.Entry.comparingByValue())
+            .max(Map.Entry.comparingByKey())
             .map(Map.Entry::getKey)
             .orElse("No Products");
     }
