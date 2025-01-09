@@ -17,7 +17,6 @@ public class PlayerController {
     private static final String PLAYER_MAIN_PAGE = "player/player-main";
     private static final String PLAYER_ADD_PAGE = "player/player-add";
     private static final String PLAYER_DETAILS_PAGE = "player/player-details";
-    private static final String PLAYER_EDIT_PAGE = "player/player-edit";
     private static final String PLAYER_ATTRIBUTE = "player";
     private static final String PLAYERS_ATTRIBUTE = "players";
     private static final String REDIRECT_TO_PLAYER = "redirect:/player";
@@ -30,14 +29,9 @@ public class PlayerController {
     }
 
     @GetMapping
-    public String displayPlayerMainPage(Model model) {
+    public String getPlayers(Model model) {
         model.addAttribute(PLAYERS_ATTRIBUTE, playerService.getAllPlayers());
         return PLAYER_MAIN_PAGE;
-    }
-
-    @GetMapping("/add")
-    public String displayPlayerAddPage() {
-        return PLAYER_ADD_PAGE;
     }
 
     @PostMapping("/add")
@@ -53,21 +47,12 @@ public class PlayerController {
     }
 
     @GetMapping("/{id}")
-    public String displayPlayerDetailsPage(@PathVariable("id") Long id, Model model) {
+    public String getPlayerById(@PathVariable("id") Long id, Model model) {
         Player player = playerService.getPlayerById(id)
                 .orElseThrow(() -> new PlayerNotFoundException("Player by ID not found"));
 
         model.addAttribute(PLAYER_ATTRIBUTE, player);
         return PLAYER_DETAILS_PAGE;
-    }
-
-    @GetMapping("/{id}/edit")
-    public String displayPlayerEditPage(@PathVariable("id") Long id, Model model) {
-        Player player = playerService.getPlayerById(id)
-                .orElseThrow(() -> new PlayerNotFoundException("Player by ID not found"));
-
-        model.addAttribute(PLAYER_ATTRIBUTE, player);
-        return PLAYER_EDIT_PAGE;
     }
 
     @PostMapping("/{id}/edit")
