@@ -8,9 +8,6 @@ public class Player {
     private String name;
     private String surname;
 
-    public Player() {
-    }
-
     public Player(Integer age, String email, String phone, String name, String surname) {
         this.age = age;
         this.email = email;
