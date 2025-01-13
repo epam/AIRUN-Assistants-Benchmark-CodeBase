@@ -3,7 +3,8 @@ using System.Text.RegularExpressions;
 
     public class PasswordValidator
     {
-        // Regular expression for a strong password
+        // The password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number,
+        // and one special character. Whitespace is not allowed
         private static readonly string PASSWORD_REGEX =
             @"^(?=.*[0-9])" +
             @"(?=.*[a-z])" +
