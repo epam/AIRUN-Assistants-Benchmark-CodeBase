@@ -21,15 +21,15 @@ public class OrderProcessor {
     public String calculateMostPopularProduct(List<Order> orders) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
-        calendar.add(Calendar.HOUR, -30);
+        calendar.add(Calendar.DAY_OF_YEAR, -30);
         Date thirtyDaysAgo = calendar.getTime();
 
         return orders.stream()
             .filter(order -> order.getOrderDate().before(thirtyDaysAgo))
             .flatMap(order -> order.getProducts().stream())
-            .collect(Collectors.groupingBy(Product::getProductName, Collectors.summingInt(Product::getQuantity)))
+            .collect(Collectors.groupingBy(Product::getProductGroup, Collectors.summingInt(Product::getQuantity)))
             .entrySet().stream()
-            .max(Map.Entry.comparingByKey())
+            .max(Map.Entry.comparingByValue())
             .map(Map.Entry::getKey)
             .orElse(NO_PRODUCTS);
     }

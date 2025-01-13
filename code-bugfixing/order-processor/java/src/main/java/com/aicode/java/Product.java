@@ -4,12 +4,14 @@ class Product {
 
     String productId;
     String productName;
+    String productGroup;
     int quantity;
     double price;
 
-    public Product(String productId, String productName, int quantity, double price) {
+    public Product(String productId, String productName, String productGroup, int quantity, double price) {
         this.productId = productId;
         this.productName = productName;
+        this.productGroup = productGroup;
         this.quantity = quantity;
         this.price = price;
     }
@@ -24,5 +26,13 @@ class Product {
 
     public String getProductName() {
         return productName;
+    }
+
+    public String getProductGroup() {
+        return productGroup;
+    }
+
+    public void setProductGroup(String productGroup) {
+        this.productGroup = productGroup;
     }
 }
