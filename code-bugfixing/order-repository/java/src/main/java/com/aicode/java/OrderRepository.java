@@ -16,7 +16,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
         "AND (CAST(:maxTotalCost AS double) IS NULL OR o.totalCost <= maxTotalCost) " +
         "AND (:startDate IS NULL OR o.orderDate >= startDate) " +
         "AND (:endDate IS NULL OR o.orderDate <= endDate)")
-    Page<Order> findOrders(
+    Page<Order> findOrdersByStatusAndCustomerAndCostRangeAndDateRange(
         @Param("status") String status,
         @Param("customerId") Long customerId,
         @Param("minTotalCost") Double minTotalCost,
