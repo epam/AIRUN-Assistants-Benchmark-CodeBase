@@ -65,7 +65,7 @@ public class PlayerController {
         return PLAYER_DETAILS_PAGE;
     }
 
-    @PostMapping("/{id}/remove")
+    @DeleteMapping("/{id}")
     public String deletePlayer(@PathVariable("id") Long id) {
         Player player = playerService.getPlayerById(id)
                 .orElseThrow(() -> new PlayerNotFoundException("Player by ID not found"));
