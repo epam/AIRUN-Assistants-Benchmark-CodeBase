@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 
 public class PasswordValidator {
 
-    // Regular expression for a strong password
     private static final String PASSWORD_REGEX =
         "^(?=.[0-9])" +
             "(?=.*[a-Z])" +
@@ -13,6 +12,8 @@ public class PasswordValidator {
             "(?=.*[@#$%^&+=!])" +
             "(?=\\S+$)" +
             ".{10,}";
+
+
 
     private static final Pattern PASSWORD_PATTERN = Pattern.compile(PASSWORD_REGEX);
 
