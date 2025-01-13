@@ -1,4 +1,4 @@
-export class PasswordValidator {
+export class passwordValidator {
 
     // The password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number,
     // and one special character. Whitespace is not allowed
@@ -15,6 +15,6 @@ export class PasswordValidator {
         if (password === null) {
             return false;
         }
-        return PasswordValidator.PASSWORD_REGEX.test(password);
+        return passwordValidator.PASSWORD_REGEX.test(password);
     }
 }
