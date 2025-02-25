@@ -4,7 +4,7 @@ public class EmployeeDTO {
 
     private Long id;
     private String name;
-    private String email;
+    private String eMail;
 
     public Long getId() {
         return id;
@@ -22,11 +22,11 @@ public class EmployeeDTO {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String geteMail() {
+        return eMail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
     }
 }

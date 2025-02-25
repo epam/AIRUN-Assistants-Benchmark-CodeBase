@@ -6,7 +6,7 @@ public class EmployeeMapper {
         EmployeeDTO employeeDTO = new EmployeeDTO();
         employeeDTO.setId(employee.getId());
         employeeDTO.setName(employee.getName());
-        employeeDTO.setEmail(employee.getEmail());
+        employeeDTO.seteMail(employee.getEmail());
         return employeeDTO;
     }
 }
