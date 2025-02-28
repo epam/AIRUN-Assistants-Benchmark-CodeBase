@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam.aicode</groupId>
-    <artifactId>algorithm-code-explanation</artifactId>
+    <groupId>com.epam.airun.sandbox.code-explanation</groupId>
+    <artifactId>algorithm-code-comments</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Explain algorithm of GaussKruger</name>
 

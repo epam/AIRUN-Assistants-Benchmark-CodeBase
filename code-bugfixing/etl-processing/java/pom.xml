@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam.aicode</groupId>
-    <artifactId>code-bugfixing-etl</artifactId>
+    <groupId>com.epam.airun.sandbox.code-bugfixing</groupId>
+    <artifactId>etl-processing</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

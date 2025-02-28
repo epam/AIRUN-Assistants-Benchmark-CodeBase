@@ -11,8 +11,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.epam.aicode</groupId>
-    <artifactId>java</artifactId>
+    <groupId>com.epam.airun.sandbox.solution-or-component-generation</groupId>
+    <artifactId>user-details</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

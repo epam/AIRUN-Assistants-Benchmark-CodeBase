@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam.aicode</groupId>
-    <artifactId>java</artifactId>
+    <groupId>com.epam.airun.sandbox.tests-creation</groupId>
+    <artifactId>unit-test-mock</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>java</name>
+    <name>unit-test-mock</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
