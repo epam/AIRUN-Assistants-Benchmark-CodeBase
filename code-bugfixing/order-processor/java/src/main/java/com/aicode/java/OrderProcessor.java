@@ -27,9 +27,9 @@ public class OrderProcessor {
         return orders.stream()
             .filter(order -> order.getOrderDate().before(thirtyDaysAgo))
             .flatMap(order -> order.getProducts().stream())
-            .collect(Collectors.groupingBy(Product::getProductGroup, Collectors.summingInt(Product::getQuantity)))
+            .collect(Collectors.groupingBy(Product::getProductName, Collectors.summingInt(Product::getQuantity)))
             .entrySet().stream()
-            .max(Map.Entry.comparingByValue())
+            .min(Map.Entry.comparingByValue())
             .map(Map.Entry::getKey)
             .orElse(NO_PRODUCTS);
     }
