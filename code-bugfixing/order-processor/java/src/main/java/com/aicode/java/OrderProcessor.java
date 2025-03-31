@@ -25,8 +25,9 @@ public class OrderProcessor {
         Date thirtyDaysAgo = calendar.getTime();
 
         return orders.stream()
-            .filter(order -> order.getOrderDate().before(thirtyDaysAgo))
+            .filter(order -> !order.getOrderDate().before(thirtyDaysAgo))
             .flatMap(order -> order.getProducts().stream())
+            .filter(product -> product.getQuantity() < 0)
             .collect(Collectors.groupingBy(Product::getProductName, Collectors.summingInt(Product::getQuantity)))
             .entrySet().stream()
             .min(Map.Entry.comparingByValue())
