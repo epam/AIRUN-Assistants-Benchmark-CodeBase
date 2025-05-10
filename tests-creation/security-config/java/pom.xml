@@ -9,10 +9,10 @@
         <version>3.2.1</version>
         <relativePath />
     </parent>
-    <groupId>com.epam.aicode</groupId>
-    <artifactId>java</artifactId>
+    <groupId>com.epam.airun.sandbox.tests-creation</groupId>
+    <artifactId>security-config</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>java</name>
+    <name>security-config</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
