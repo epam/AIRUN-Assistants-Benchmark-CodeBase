@@ -29,6 +29,7 @@ public class OrderProcessor {
             .flatMap(order -> order.getProducts().stream())
             .collect(Collectors.groupingBy(Product::getProductGroup, Collectors.summingInt(Product::getQuantity)))
             .entrySet().stream()
+            .filter(entry -> entry.getValue() > 0)
             .max(Map.Entry.comparingByValue())
             .map(Map.Entry::getKey)
             .orElse(NO_PRODUCTS);
